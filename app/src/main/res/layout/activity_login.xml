@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginActivity">
+
+    <TextView
+        android:id="@+id/tv_welcomeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Welcome Back!"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_loginphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_loginname"
+        app:layout_constraintStart_toStartOf="@+id/et_loginname"
+        app:layout_constraintTop_toBottomOf="@+id/et_loginname" />
+
+    <EditText
+        android:id="@+id/et_loginpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_loginphone"
+        app:layout_constraintStart_toStartOf="@+id/et_loginphone"
+        app:layout_constraintTop_toBottomOf="@+id/et_loginphone" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="@+id/et_loginpassword"
+        app:layout_constraintStart_toStartOf="@+id/et_loginpassword"
+        app:layout_constraintTop_toBottomOf="@+id/et_loginpassword" />
+
+    <com.rey.material.widget.CheckBox
+        android:id="@+id/cb_rememberme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_700"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:outlineAmbientShadowColor="@color/purple_700"
+        app:buttonTint="@color/purple_700"
+        android:text="Remember me"
+        android:textColor="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <TextView
+        android:id="@+id/tv_iamanadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="I am an Admin?"
+        app:layout_constraintEnd_toEndOf="@+id/cb_rememberme"
+        app:layout_constraintStart_toStartOf="@+id/cb_rememberme"
+        app:layout_constraintTop_toBottomOf="@+id/cb_rememberme" />
+
+    <EditText
+        android:id="@+id/et_loginname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_welcomeback"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcomeback"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcomeback" />
+
+    <TextView
+        android:id="@+id/tv_notanadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="24dp"
+        android:text="Not an admin?"
+        app:layout_constraintEnd_toEndOf="@+id/cb_rememberme"
+        app:layout_constraintStart_toStartOf="@+id/cb_rememberme"
+        app:layout_constraintTop_toBottomOf="@+id/cb_rememberme" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

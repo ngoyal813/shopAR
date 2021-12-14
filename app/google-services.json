@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "887056771817",
+    "firebase_url": "https://shopar-497ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "shopar-497ee",
+    "storage_bucket": "shopar-497ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887056771817:android:ea6a24c7270d01fbddde78",
+        "android_client_info": {
+          "package_name": "com.example.shopar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887056771817-7ucqa40mii7nombeg87fn42gs7ql0sae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnBYSthj_rjMhO3L9XyEQfxwRIGes3Qr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887056771817-7ucqa40mii7nombeg87fn42gs7ql0sae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

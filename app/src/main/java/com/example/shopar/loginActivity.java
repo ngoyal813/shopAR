@@ -141,7 +141,7 @@ public class loginActivity extends AppCompatActivity {
                     if(userdata.getPhone().equals(Inputphone.getText().toString())){
                         if(userdata.getPassword().equals(Inputpassword.getText().toString())){
                             if(parentDbname.equals("Admins")){
-                                Intent adminintent = new Intent(loginActivity.this,adminActivity.class);
+                                Intent adminintent = new Intent(loginActivity.this,admincategoryactivity.class);
                                 startActivity(adminintent);
                             }
                             else if(parentDbname.equals("Users")){

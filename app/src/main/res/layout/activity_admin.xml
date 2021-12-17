@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".adminActivity">
 
+    <Button
+        android:id="@+id/btn_adminselectimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Select Image"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_adminselectmodel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Select Model"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/btn_adminselectimage"
+        app:layout_constraintStart_toStartOf="@+id/btn_adminselectimage"
+        app:layout_constraintTop_toBottomOf="@+id/btn_adminselectimage" />
+
+    <EditText
+        android:id="@+id/et_adminproductname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Product Name"
+        app:layout_constraintEnd_toEndOf="@+id/btn_adminselectmodel"
+        app:layout_constraintStart_toStartOf="@+id/btn_adminselectmodel"
+        app:layout_constraintTop_toBottomOf="@+id/btn_adminselectmodel" />
+
+    <EditText
+        android:id="@+id/et_adminproductdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Product Description"
+        app:layout_constraintEnd_toEndOf="@+id/et_adminproductname"
+        app:layout_constraintStart_toStartOf="@+id/et_adminproductname"
+        app:layout_constraintTop_toBottomOf="@+id/et_adminproductname" />
+
+    <EditText
+        android:id="@+id/et_adminproductprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Product Price"
+        app:layout_constraintEnd_toEndOf="@+id/et_adminproductdescription"
+        app:layout_constraintStart_toStartOf="@+id/et_adminproductdescription"
+        app:layout_constraintTop_toBottomOf="@+id/et_adminproductdescription" />
+
+    <Button
+        android:id="@+id/btn_adminaddproduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Add Product"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="@+id/et_adminproductprice"
+        app:layout_constraintStart_toStartOf="@+id/et_adminproductprice"
+        app:layout_constraintTop_toBottomOf="@+id/et_adminproductprice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

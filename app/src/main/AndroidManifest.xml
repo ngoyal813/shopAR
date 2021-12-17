@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAR">
         <activity
+            android:name=".admincategoryactivity"
+            android:exported="false" />
+        <activity
             android:name=".adminActivity"
             android:exported="false" />
         <activity

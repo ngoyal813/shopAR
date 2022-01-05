@@ -30,8 +30,8 @@
 
             <ImageView
                 android:id="@+id/iv_home_Categories"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="130dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -57,6 +57,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 android:text="Furniture"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/iv_home_Categories"

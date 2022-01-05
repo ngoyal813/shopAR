@@ -137,7 +137,7 @@ public class loginActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child(parentDbname).child(Inputphone.getText().toString()).exists())
                 {
-                    Users userdata = snapshot.child(parentDbname).child(Inputphone.getText().toString()).getValue(Users.class);
+                    Users userdata = snapshot.child(parentDbname).child(Inputphone.getText().toString()).child("Credentials").getValue(Users.class);
                     if(userdata.getPhone().equals(Inputphone.getText().toString())){
                         if(userdata.getPassword().equals(Inputpassword.getText().toString())){
                             if(parentDbname.equals("Admins")){
@@ -145,11 +145,13 @@ public class loginActivity extends AppCompatActivity {
                                 startActivity(adminintent);
                             }
                             else if(parentDbname.equals("Users")){
+                                Prevalent.currentOnlineUser = userdata;
                                 Intent loginintent = new Intent(loginActivity.this,homeActivity.class);
                                 startActivity(loginintent);
                             }
-
                         }
+                    }else{
+                        Toast.makeText(loginActivity.this,"User Doesn't Exists",Toast.LENGTH_SHORT).show();
                     }
                 }else{
                     Toast.makeText(loginActivity.this,"User Doesn't Exists",Toast.LENGTH_SHORT).show();
@@ -158,7 +160,7 @@ public class loginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(loginActivity.this,"User Doesn't Exists",Toast.LENGTH_SHORT).show();
             }
         });
 

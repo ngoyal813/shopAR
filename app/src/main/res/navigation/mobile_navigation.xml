@@ -8,18 +8,86 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.shopar.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="ShopAR"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_cartview" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_orderview" />
+        <action
+            android:id="@+id/action_nav_home_to_productDetails"
+            app:destination="@id/productavailable" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_home_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_cartview"
         android:name="com.example.shopar.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_orderview"
         android:name="com.example.shopar.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/productavailable"
+        android:name="com.example.shopar.ProductAvailableFragment"
+        android:label="Products Available"
+        tools:layout="@layout/fragment_product_available">
+        <action
+            android:id="@+id/action_productDetails_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_productDetails_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.shopar.ProductDetailsFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_product_details" >
+        <action
+            android:id="@+id/action_productDetailsFragment_to_arFragment"
+            app:destination="@id/arFragment" />
+        <argument
+            android:name="modeluri"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_faceaugmentation"
+            app:destination="@id/faceaugmentation" />
+    </fragment>
+    <fragment
+        android:id="@+id/arFragment"
+        android:name="com.example.shopar.AugmentationFragment"
+        android:label="3D View"
+        tools:layout="@layout/fragment_a_rfragment"/>
+    <fragment
+        android:id="@+id/faceaugmentation"
+        android:name="com.example.shopar.faceaugmentation"
+        android:label="Virtual Try-on"
+        tools:layout="@layout/fragment_faceaugmentation" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.shopar.CartFragment"
+        android:label="My Cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.shopar.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+
 </navigation>

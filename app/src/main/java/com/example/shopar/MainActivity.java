@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shopar.Prevalent.Prevalent;
+import com.example.shopar.Viewholder.Productviewholder;
 import com.example.shopar.models.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -71,15 +72,16 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child("Users").child(userphonekey).exists())
                 {
-                    Users userdata = snapshot.child("Users").child(userphonekey).getValue(Users.class);
+                    Users userdata = snapshot.child("Users").child(userphonekey).child("Credentials").getValue(Users.class);
                     if(userdata.getPhone().equals(userphonekey)){
                         if(userdata.getPassword().equals(userpassword)){
                             Intent loginintent = new Intent(MainActivity.this,homeActivity.class);
+                            Prevalent.currentOnlineUser = userdata;
                             startActivity(loginintent);
                         }
                     }
                 }else{
-//                    Toast.makeText(MainActivity.this,"user doesn't exists",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"user doesn't exists",Toast.LENGTH_SHORT).show();
                 }
             }
 

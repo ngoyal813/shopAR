@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class admincategoryactivity extends AppCompatActivity {
 
-    private TextView shoes,furniture,toys;
+    private TextView shoes,furniture,toys,sunglasses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,15 @@ public class admincategoryactivity extends AppCompatActivity {
         shoes = findViewById(R.id.tv_adminshoescategory);
         furniture  = findViewById(R.id.tv_adminfurniturecategory);
         toys =  findViewById(R.id.tv_admintoyscategory);
+        sunglasses = findViewById(R.id.tv_sunglasses);
+        sunglasses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(admincategoryactivity.this,adminActivity.class);
+                intent.putExtra("category","sunglasses");
+                startActivity(intent);
+            }
+        });
 
         shoes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +52,7 @@ public class admincategoryactivity extends AppCompatActivity {
                 intent.putExtra("category","toys");
                 startActivity(intent);
             }
+
         });
     }
 }

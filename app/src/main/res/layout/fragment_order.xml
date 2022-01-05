@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderFragment">
+
+    <TextView
+        android:id="@+id/tv_pleasenetershipmentdetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Please Enter Shipment Details"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_nameconfirmorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:ems="20"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pleasenetershipmentdetails"
+        app:layout_constraintStart_toStartOf="@+id/tv_pleasenetershipmentdetails"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pleasenetershipmentdetails" />
+
+    <EditText
+        android:id="@+id/et_emailconfirmorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:ems="20"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/et_nameconfirmorder"
+        app:layout_constraintStart_toStartOf="@+id/et_nameconfirmorder"
+        app:layout_constraintTop_toBottomOf="@+id/et_nameconfirmorder" />
+
+    <EditText
+        android:id="@+id/et_phoneconfirmorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:ems="20"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="@+id/et_emailconfirmorder"
+        app:layout_constraintStart_toStartOf="@+id/et_emailconfirmorder"
+        app:layout_constraintTop_toBottomOf="@+id/et_emailconfirmorder" />
+
+    <EditText
+        android:id="@+id/et_addressconfirmorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:ems="20"
+        android:inputType="textPersonName"
+        android:hint="Address"
+        app:layout_constraintEnd_toEndOf="@+id/et_phoneconfirmorder"
+        app:layout_constraintStart_toStartOf="@+id/et_phoneconfirmorder"
+        app:layout_constraintTop_toBottomOf="@+id/et_phoneconfirmorder" />
+
+    <Button
+        android:id="@+id/btn_confirmorder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="Confirm Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.shopar.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -23,6 +25,10 @@ public class home_recyclerview_adapter extends RecyclerView.Adapter<home_recycle
 
     public home_recyclerview_adapter(List<categoryModel> categoriesList, Context context) {
         this.categoriesList = categoriesList;
+        this.context = context;
+    }
+
+    public home_recyclerview_adapter(Context context) {
         this.context = context;
     }
 
@@ -42,6 +48,15 @@ public class home_recyclerview_adapter extends RecyclerView.Adapter<home_recycle
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         holder.category_title.setText(this.categoriesList.get(position).getCategory_title());
         Glide.with(context).load(this.categoriesList.get(position).getCategory_image()).into(holder.category_image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("Category",categoriesList.get(position).getCategory_title());
+                Navigation.findNavController(view).navigate(R.id.productavailable,bundle);
+            }
+        });
     }
 
     @Override

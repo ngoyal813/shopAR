@@ -42,7 +42,6 @@ public class adminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-
         categoryname = getIntent().getExtras().get("category").toString();
         selectimage = findViewById(R.id.btn_adminselectimage);
         selectmodel = findViewById(R.id.btn_adminselectmodel);
@@ -77,7 +76,8 @@ public class adminActivity extends AppCompatActivity {
 
     private void openfiles() {
         Intent fileintent = new Intent();
-        fileintent.setAction(Intent.ACTION_PICK);
+        fileintent.setAction(Intent.ACTION_GET_CONTENT);
+        fileintent.setType("application/octet-stream");
         startActivityForResult(fileintent,modelpick);
     }
     private void opengallery() {
@@ -86,13 +86,15 @@ public class adminActivity extends AppCompatActivity {
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent,gallerypick);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == modelpick && resultCode == RESULT_OK && data!=null){
-            modeluri = data.getData();
-            imageuri = data.getData();
+        switch (requestCode){
+            case gallerypick:
+                imageuri = data.getData();
+            case modelpick:
+                modeluri = data.getData();
+
         }
     }
 
@@ -208,7 +210,7 @@ public class adminActivity extends AppCompatActivity {
         productmap.put("price",price);
         productmap.put("name",pname);
 
-        productref.child(productrandomkey).updateChildren(productmap)
+        productref.child(categoryname).child(productrandomkey).updateChildren(productmap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

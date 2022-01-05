@@ -2,6 +2,10 @@ package com.example.shopar.models;
 
 public class categoryModel {
 
+    public categoryModel() {
+
+    }
+
     public int getCategory_image() {
         return category_image;
     }

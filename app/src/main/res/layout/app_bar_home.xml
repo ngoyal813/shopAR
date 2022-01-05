@@ -16,19 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.ShopAR.PopupOverlay" />
+            app:popupTheme="@style/Theme.ShopAR.AppBarOverlay" >
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"
+                android:scaleType="fitXY"
+                android:scaleY="2"
+                android:adjustViewBounds="true"/>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_home" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
